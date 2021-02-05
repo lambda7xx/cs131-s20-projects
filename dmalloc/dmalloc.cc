@@ -14,6 +14,9 @@
  * 
  * @return a pointer to the heap where the memory was reserved
  */
+
+dmalloc_stats   globalStats ={0,0,0,0,0,0,0,0};
+
 void* dmalloc(size_t sz, const char* file, long line) {
     (void) file, (void) line;   // avoid uninitialized variable warnings
     // Your code here.
@@ -65,8 +68,9 @@ void* dcalloc(size_t nmemb, size_t sz, const char* file, long line) {
  */
 void get_statistics(dmalloc_stats* stats) {
     // Stub: set all statistics to enormous numbers
-    memset(stats, 255, sizeof(dmalloc_stats));
+    //memset(stats, 255, sizeof(dmalloc_stats));
     // Your code here.
+    *stats = globalStats;
 }
 
 /**

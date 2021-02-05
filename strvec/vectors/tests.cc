@@ -387,18 +387,18 @@ int main() {
 
   points += test_initialize(&string_vect, &int_vect);
   points += test_adding(&string_vect, string_sol);
-  points += test_size(&string_vect, string_sol);
-  points += test_realloc(&int_vect, int_sol);
-  points += test_delete(&string_vect, string_sol);
-  points += test_get(&int_vect, int_sol);
+ // points += test_size(&string_vect, string_sol);
+ // points += test_realloc(&int_vect, int_sol);
+ // points += test_delete(&string_vect, string_sol);
+  //points += test_get(&int_vect, int_sol);
   // I don't really know if this test is worth while
-  points += test_insert_delete();
+ // points += test_insert_delete();
 
   // this will need to be checked with an address sanitizer outside of this
   // points system or just by visually looking at the code and making sure they
   // call free
-  destroy_vector(&string_vect);
-  destroy_vector(&int_vect);
+ // destroy_vector(&string_vect);
+  //destroy_vector(&int_vect);
 
   printf("\n=====================\nTotal Score: %d out of 20\n", points);
   return 0;

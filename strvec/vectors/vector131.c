@@ -11,7 +11,10 @@
  */
 void initialize_vector(vector_t* v, size_t type) {
   // TODO: implement
-  v->array = NULL;  // you'll need to change this
+//  v->array = NULL;  // you'll need to change this
+  v->array =(char *)malloc(sizeof(char *) * type);
+  v->ele_size  =type;
+  v->length = 0;
 }
 
 /*Frees this vector
@@ -52,7 +55,11 @@ void* vector_get(vector_t* v, int index) {
  * Return value: none
  */
 void vector_add_back(vector_t* v, void* ele) {
-  // TODO: implement
+  size_t lent = v->length;
+  (char*)v->array[lent] = *(char*)ele;
+ // (void *)v->array[lent] =(char *) ele;
+  v->length++;
+  return;
 }
 
 /*Removes the last element in a vector
